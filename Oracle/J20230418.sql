@@ -1,3 +1,5 @@
+SELECT * FROM employees;
+
 --같지않다. <>
 --employees 테이블에서 manager_id가 105가 아닌 직원을 조회
 SELECT * FROM employees
@@ -15,12 +17,20 @@ SELECT
 last_name,
 LOWER(last_name) LOWER_적용,
 UPPER(last_name) UPPER_적용,
+
 email,
 INITCAP(email) INITCAP_적용
 FROM employees;
 
+SELECT job_id, SUBSTR(job_id,1,1) 적용결과
+FROM employees;
 SELECT job_id, SUBSTR(job_id,1,2) 적용결과
 FROM employees;
+SELECT job_id, SUBSTR(job_id,1,4) 적용결과
+FROM employees;
+SELECT job_id, SUBSTR(job_id,4,2) 적용결과
+FROM employees;
+
 
 --employees 테이블에서 job_id 문자열 값이 ACCOUNT면 ACCNT로 출력
 SELECT
@@ -29,6 +39,11 @@ FROM employees;
 
 SELECT
 job_id, REPLACE(job_id, 'ACCOUNT', 'ACCNT')
+FROM employees;
+
+
+SELECT
+REPLACE(job_id, 'ACCOUNT', 'ACCNT') job_id
 FROM employees;
 
 SELECT
@@ -58,7 +73,7 @@ salary,
 salary/30 일급,
 TRUNC(salary/30, 0) 적용결과_0,
 TRUNC(salary/30, 1) 적용결과_1,
-TRUNC(salary/30, -1) 적용결과_MINUS_1
+TRUNC(salary/30, -1) 적용결과_MINUS1
 FROM employees;
 
 --날짜

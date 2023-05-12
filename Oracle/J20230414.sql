@@ -1,3 +1,11 @@
+--데이터베이스 객체(테이블, 뷰, 프로시저 등)의 구조 및 속성을 조회하기 위해 사용되는 SQL 명령어입니다.
+--객체의 컬럼 이름, 데이터 타입, 크기 등을 보여줍니다.
+desc emp;
+
+--select
+
+SELECT '야후' FROM emp;
+
 -- employees의 모든 정보를 출력
 SELECT * FROM employees;
 
@@ -14,9 +22,9 @@ SELECT * FROM departments;
 
 select employee_id, first_name, last_name
 from employees
-ORDER BY employee_id DESC;
-
---오름차순: ASC, but default가 오름차순이라 필요없음
+ORDER BY employee_id desc;
+--오름차순: ASC
+--but default가 오름차순이라 필요없음
 
 --Quest: employees 테이블에서 중복 값이 생기지 않도록 job_id를 출력하시오
 SELECT DISTINCT job_id
@@ -37,4 +45,7 @@ FROM employees;
 
 --employees 테이블에서 employee_id를 출력하고 first_name과 last_name을 붙여서 출력하되 가운데 한 칸을 띄워 주고 다음 열에서 email을 출력하는데 @company.com 문구를 붙여서 출력
 SELECT employee_id, first_name||' '||last_name AS 이름, email||'@'||'company.com' AS 이메일
+FROM employees;
+
+SELECT employee_id, first_name||' '||last_name 이름, email||'@'||'company.com' 이메일
 FROM employees;

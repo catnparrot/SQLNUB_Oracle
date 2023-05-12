@@ -1,0 +1,47 @@
+CREATE TABLE members (
+	memid VARCHAR(9) NOT NULL 	PRIMARY KEY,
+	memname VARCHAR(20) NOT NULL,
+	passwd VARCHAR(128) NULL,
+	passwdmdt DATE NULL,
+	jumin VARCHAR(64) NULL,
+	addr VARCHAR(100) NULL,
+	birthday DATE,
+	jobcd CHAR(1) NULL,
+	mileage number(7,0) DEFAULT 0,
+	stat char(1),
+	enterdtm DATE DEFAULT SYSDATE,
+	leavedtm DATE
+);
+
+drop table members;
+
+
+CREATE TABLE members (
+	memid VARCHAR2(9) NOT NULL	PRIMARY KEY,
+	memname VARCHAR2(20) NOT NULL,
+	passwd VARCHAR2(128) DEFAULT NULL NULL,
+	passwdmdt TIMESTAMP DEFAULT NULL NULL,
+	jumin VARCHAR2(64) DEFAULT NULL NULL,
+	addr VARCHAR2(100) DEFAULT NULL NULL,
+	birthday DATE DEFAULT NULL NULL,
+	jobcd CHAR(1) DEFAULT NULL NULL,
+	mileage NUMBER(7,0) DEFAULT '0' CHECK (mileage > 0) NULL,
+	stat ENUM('Y','N') DEFAULT 'Y' NOT NULL,
+	enterdtm TIMESTAMP DEFAULT current_timestamp() NOT NULL,
+	leavedtm TIMESTAMP DEFAULT NULL NULL,
+);
+
+CREATE TABLE members (
+	memid VARCHAR2(9) NOT NULL PRIMARY KEY,
+	memname VARCHAR2(20) NOT NULL,
+	passwd VARCHAR2(128) DEFAULT NULL,
+	passwdmdt TIMESTAMP DEFAULT NULL,
+	jumin VARCHAR2(64) DEFAULT NULL,
+	addr VARCHAR2(100) DEFAULT NULL,
+	birthday DATE DEFAULT NULL,
+	jobcd VARCHAR2(1) DEFAULT NULL,
+	mileage NUMBER(7,0) DEFAULT '0' CHECK (mileage > 0),
+	stat CHAR(1) DEFAULT 'Y' NOT NULL,
+	enterdtm TIMESTAMP DEFAULT current_timestamp() NOT NULL,
+	leavedtm TIMESTAMP DEFAULT NULL
+);
